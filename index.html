@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <div id="taschenrechner" class="taschenrechner">
+        <input type="text" id="display">
+        <button id="1" onclick="appendToDisplay('1')">1</button>
+        <button id="2" onclick="appendToDisplay('2')">2</button>
+        <button id="3" onclick="appendToDisplay('3')">3</button><br>
+        <button id="4" onclick="appendToDisplay('4')">4</button>
+        <button id="5" onclick="appendToDisplay('5')">5</button>
+        <button id="6" onclick="appendToDisplay('6')">6</button><br>
+        <button id="7" onclick="appendToDisplay('7')">7</button>
+        <button id="8" onclick="appendToDisplay('8')">8</button>
+        <button id="9" onclick="appendToDisplay('9')">9</button><br>
+        <div class="operators">
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <select id="operator" class="operator">
+                <option id="null" value='?'>?</option>
+                <option id="prozent" value='%'>%</option>
+
+
+            </select>
+        </div>
+        <button id="." onclick="appendToDisplay('.')">.</button>
+        <button id="0" onclick="appendToDisplay('0')">0</button>
+
+        <button id="=" onclick="summery()">=</button>
+        <button id="clear" onclick="clearDisplay()">C</button>
+
+
+
+    </div>
+    <div class="cheat">
+        <select name="cheating" id="cheating">
+            <option id="ausgangswert" value="Cheat">Cheat</option>
+            <option id="rechteck" value="rechteck">Rechteck</option>
+            <option id="kreis" value="kreis">Kreis</option>
+            <option id="quadrat" value="quadrat">Quadrat</option>
+        </select>
+    </div>
+    <div class="backgroundchange">
+        <button onclick="backgroundchange('1')" id="backgoundOne">Theme1</button>
+        <button onclick="backgroundchange('2')" id="backgounTwo">Theme2</button>
+        <button onclick="backgroundchange('3')" id="backgoundThree">Theme3</button>
+        <button onclick="backgroundchange('4')" id="backgoundThree">Fehler</button>
+   
+   
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

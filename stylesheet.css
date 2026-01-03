@@ -1,0 +1,100 @@
+.taschenrechner {
+    width: 24vh;
+    height: 32vh;
+    display: block;
+    flex-direction: column;
+    background-color: beige;
+    border: solid;
+    position: relative;
+    background-image: url('/Programme/Taschenrechner/img/dragon.jpg');
+    background-position: center;
+    background-size: contain;
+
+}
+
+.operators {
+    width: 6vh;
+    height: 18vh;
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+
+
+}
+
+.operators>.operator {
+    width: 6vh;
+    height: 6vh;
+    background-color: rgba(128, 128, 128, 0.144);
+    font-size: 24px;
+}
+
+.operator:hover {
+    background-color: darkgrey;
+}
+
+.taschenrechner>button {
+    width: 5vh;
+    height: 5vh;
+    margin-left: 0.5vh;
+    background-color: rgba(128, 128, 128, 0.445);
+    color: black;
+    font-size: 24px;
+
+
+}
+
+.taschenrechner>button:hover {
+    background-color: darkgrey;
+}
+
+#display {
+    width: 23.3vh;
+    height: 8vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    color: blue;
+    font-size: 25px;
+    background-color: rgba(128, 128, 128, 0.205);
+
+}
+#display:focus{
+    background-color: rgba(255, 246, 246, 0.808);
+}
+#clear {
+    width: 6vh;
+    height: 6vh;
+    position: absolute;
+    right: 0;
+    top: 8.5vh;
+    color: crimson;
+    font-size: 24px;
+}
+
+.cheat {
+    display: flex;
+    width: fit-content;
+    font-size: 24px;
+    position: absolute;
+    left: 16vh;
+    top: 2vh;
+}
+#cheating{
+    background-color: rgba(128, 128, 128, 0.445);
+}
+.backgroundchange{
+background-color: rgba(128, 128, 128, 0.445);
+width: fit-content;
+display: flex;
+flex-direction: row;
+position: absolute;
+top: 8vh;
+}
+.backgroundchange>button{
+    background-color: rgba(128, 128, 128, 0.445);
+width: 6.1vh;
+}
