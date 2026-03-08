@@ -1,63 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="stylesheet.css">
-</head>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
 
-<body>
+  <body>
     <div id="taschenrechner" class="taschenrechner">
-        <input type="text" id="display">
-        <button id="1" onclick="appendToDisplay('1')">1</button>
-        <button id="2" onclick="appendToDisplay('2')">2</button>
-        <button id="3" onclick="appendToDisplay('3')">3</button><br>
-        <button id="4" onclick="appendToDisplay('4')">4</button>
-        <button id="5" onclick="appendToDisplay('5')">5</button>
-        <button id="6" onclick="appendToDisplay('6')">6</button><br>
-        <button id="7" onclick="appendToDisplay('7')">7</button>
-        <button id="8" onclick="appendToDisplay('8')">8</button>
-        <button id="9" onclick="appendToDisplay('9')">9</button><br>
-        <div class="operators">
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
-            <button class="operator" onclick="appendToDisplay('*')">*</button>
-            <button class="operator" onclick="appendToDisplay('/')">/</button>
-            <select id="operator" class="operator">
-                <option id="null" value='?'>?</option>
-                <option id="prozent" value='%'>%</option>
+      <input type="text" id="display" />
+      <div class="num-grid">
+        <button class="num-btn" id="one">1</button>
+        <button class="num-btn" id="two">2</button>
+        <button class="num-btn" id="three">3</button>
+        <button class="num-btn" id="foure">4</button>
+        <button class="num-btn" id="five">5</button>
+        <button class="num-btn" id="siix">6</button>
+        <button class="num-btn" id="seven">7</button>
+        <button class="num-btn" id="aight">8</button>
+        <button class="num-btn" id="nine">9</button>
+        <button class="num-btn" id="point">.</button>
+        <button class="num-btn" id="null">0</button>
 
+        <button class="num-btn" id="equal" >=</button>
+      </div>
+      <div class="zeichen-grid">
+        <button class="num-btn btn-plus">+</button>
+        <button class="num-btn btn-minus">-</button>
+        <button class="num-btn btn-mal">*</button>
+        <button class="num-btn btn-geteilt">/</button>
+      </div>
+      <button class="num-btn prozent" id="prozent">%</button>>
+      <button class="num-btn clear" id="clear" value="C">C</button>
 
-            </select>
-        </div>
-        <button id="." onclick="appendToDisplay('.')">.</button>
-        <button id="0" onclick="appendToDisplay('0')">0</button>
-
-        <button id="=" onclick="summery()">=</button>
-        <button id="clear" onclick="clearDisplay()">C</button>
-
-
-
-    <div class="cheat">
-        <select name="cheating" id="cheating">
-            <option id="ausgangswert" value="Cheat">Cheat</option>
-            <option id="rechteck" value="rechteck">Rechteck</option>
-            <option id="kreis" value="kreis">Kreis</option>
-            <option id="quadrat" value="quadrat">Quadrat</option>
-        </select>
-    </div>
-    <div class="backgroundchange">
-        <button onclick="backgroundchange('1')" id="backgoundOne">Theme1</button>
+      <!-- <select name="cheating" id="cheating">
+        <option id="ausgangswert" value="cheat">Formel</option>
+        <option id="rechteck" value="rechteck">Rechteck</option>
+        <option id="kreis" value="kreis">Kreis</option>
+        <option id="quadrat" value="quadrat">Quadrat</option>
+      </select> -->
+      <div class="theme-grid">
+        <button onclick="backgroundchange('1')" id="backgoundOne">
+          Theme1
+        </button>
         <button onclick="backgroundchange('2')" id="backgounTwo">Theme2</button>
-        <button onclick="backgroundchange('3')" id="backgoundThree">Theme3</button>
-        <button onclick="backgroundchange('4')" id="backgoundThree">Fehler</button>
-   
-   
-    </div>
+        <button onclick="backgroundchange('3')" id="backgoundThree">
+          Theme3
+        </button>
+        <button onclick="backgroundchange('4')" id="backgoundThree">
+          Fehler
+        </button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
