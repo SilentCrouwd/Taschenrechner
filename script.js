@@ -1,8 +1,7 @@
 // --- DOM-Elemente selektieren ---
 const numbtn = document.querySelectorAll(".num-btn"); // Alle Ziffern- und Operationstasten
 const display = document.getElementById("display");    // Das Haupt-Eingabefeld/Display
-const wert1 = document.getElementById("wert1");        // (Zusatzfelder, falls benötigt)
-const wert2 = document.getElementById("wert2");
+
 
 // --- Event-Listener für die Taschenrechner-Tasten ---
 numbtn.forEach((element, index) => {
