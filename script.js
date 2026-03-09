@@ -1,37 +1,54 @@
-const numbtn = document.querySelectorAll(".num-btn");
-const display = document.getElementById("display");
-const wert1 = document.getElementById("wert1");
+// --- DOM-Elemente selektieren ---
+const numbtn = document.querySelectorAll(".num-btn"); // Alle Ziffern- und Operationstasten
+const display = document.getElementById("display");    // Das Haupt-Eingabefeld/Display
+const wert1 = document.getElementById("wert1");        // (Zusatzfelder, falls benötigt)
 const wert2 = document.getElementById("wert2");
 
+// --- Event-Listener für die Taschenrechner-Tasten ---
 numbtn.forEach((element, index) => {
-  // console.log(index+1)
   element.addEventListener("click", () => {
+    // Überprüfung des Index (0-8 entspricht meist den Tasten 1-9)
     if (index <= 8) {
       appendToDislay(index + 1);
-    } else if (element.textContent === "0") {
+    } 
+    // Behandlung der Null-Taste
+    else if (element.textContent === "0") {
       appendToDislay("0");
-    } else if (element.textContent === "C") {
+    } 
+    // Display leeren (Clear-Taste)
+    else if (element.textContent === "C") {
       display.value = "";
-    } else if (element.textContent === "=") {
+    } 
+    // Berechnung ausführen
+    else if (element.textContent === "=") {
+      // eval() berechnet den String im Display (Vorsicht bei komplexen Apps!)
       display.value = eval(display.value);
-    } else if (element.textContent === "%") {
-      display.value = eval(display.value);
-      display.value = display.value / 100;
-    } else {
+    } 
+    // Prozentrechnung
+    else if (element.textContent === "%") {
+      display.value = eval(display.value); // Erst Ergebnis berechnen
+      display.value = display.value / 100; // Dann durch 100 teilen
+    } 
+    // Operatoren (+, -, *, /) oder Dezimalpunkt
+    else {
       appendToDislay(element.textContent);
     }
-  }); // Ende vom EventListener
-}); // Ende vom forEach
+  });
+});
 
+// Funktion zum Hinzufügen von Zeichen zum Display
 function appendToDislay(e) {
   display.value = display.value + e;
 }
 
+// --- Theme / Design Wechsel Logik ---
 const taschenrechnerContainer = document.querySelector(".taschenrechner");
 const themeChangeBtn = document.querySelectorAll(".btnBackground");
+const btnFormel = document.querySelectorAll(".formel-btn");
 
 themeChangeBtn.forEach((element, index) => {
   element.addEventListener("click", () => {
+    // Theme 1: Standard / Dunkel (nutzt CSS-Variablen)
     if (index === 0) {
       taschenrechnerContainer.style.backgroundImage =
         "radial-gradient(var(--secondcolor),var(--tertiercolor))";
@@ -41,72 +58,97 @@ themeChangeBtn.forEach((element, index) => {
         themeChangeBtn.forEach((element) => {
           element.style.backgroundImage =
             "radial-gradient(var(--secondcolor),var(--tertiercolor))";
+        btnFormel.forEach((element) => {
+          element.style.backgroundImage =
+            "radial-gradient(var(--secondcolor),var(--tertiercolor))";
         });
+          });
       });
-    } else if (index === 1) {
+    } 
+    // Theme 2: Helleres Design
+    else if (index === 1) {
       taschenrechnerContainer.style.backgroundImage =
         "radial-gradient(var(--textcolor),var(--secondcolor))";
       numbtn.forEach((element) => {
         element.style.color = "black";
-        if (element.textContent === "C") {
-          element.style.color = "red";
-        }
+        if (element.textContent === "C") { element.style.color = "red"; }
         element.style.backgroundImage =
           "radial-gradient(var(--textcolor),var(--secondcolor))";
         themeChangeBtn.forEach((element) => {
+              element.style.color = "black";
           element.style.backgroundImage =
-            "radial-gradient(var(--secondcolor),var(--textcolor))";
+              "radial-gradient(var(--textcolor),var(--secondcolor))";
+        btnFormel.forEach((element) => {
+              element.style.color = "black";
+          element.style.backgroundImage =
+             "radial-gradient(var(--textcolor),var(--secondcolor))";
         });
+          });
       });
-    } else if (index === 2) {
+    } 
+    // Theme 3: Custom Theme 1
+    else if (index === 2) {
       taschenrechnerContainer.style.backgroundImage =
         "radial-gradient(var(--textcolor),var( --theme1))";
       numbtn.forEach((element) => {
         element.style.color = "black";
-        if (element.textContent === "C") {
-          element.style.color = "red";
-        }
+        if (element.textContent === "C") { element.style.color = "red"; }
         element.style.backgroundImage =
           "radial-gradient(var(--textcolor),var( --theme1))";
         themeChangeBtn.forEach((element) => {
+            element.style.color = "black";
           element.style.backgroundImage =
             "radial-gradient(var(--textcolor),var( --theme1))";
+        btnFormel.forEach((element) => {
+               element.style.color = "black";
+          element.style.backgroundImage =
+                 "radial-gradient(var(--textcolor),var( --theme1))";
         });
+     
+          });
       });
-    } else if (index === 3) {
+    } 
+    // Theme 4: Custom Theme 2
+    else if (index === 3) {
       taschenrechnerContainer.style.backgroundImage =
         "radial-gradient(var(--textcolor),var( --theme2))";
       numbtn.forEach((element) => {
         element.style.color = "black";
-        if (element.textContent === "C") {
-          element.style.color = "red";
-        }
+        if (element.textContent === "C") { element.style.color = "red"; }
         element.style.backgroundImage =
           "radial-gradient(var(--textcolor),var( --theme2))";
         themeChangeBtn.forEach((element) => {
+               element.style.color = "black";
           element.style.backgroundImage =
             "radial-gradient(var(--textcolor),var( --theme2))";
+             
+           btnFormel.forEach((element) => {
+                 element.style.color = "black";
+          element.style.backgroundImage =
+                "radial-gradient(var(--textcolor),var( --theme2))"
         });
+          });
       });
-    } else {
+    } 
+    // Reset: Letzter Button lädt die Seite neu (Standard-Zustand)
+    else {
       window.location.reload();
     }
   });
 });
 
+// --- Formel-Anzeige Logik ---
 const formelBtn = document.querySelectorAll(".formel-btn");
 
 formelBtn.forEach((element) => {
   element.addEventListener("click", () => {
+    // Zeigt die mathematische Formel im Display an, wenn ein Formel-Button geklickt wird
     if (element.textContent === "Quadrat") {
-      display.value = "";
-      display.value = "A = 2 * a";
+      display.value = "A = 2 * a"; // Hinweis: Flächeninhalt wäre a*a oder a²
     } else if (element.textContent === "Rechteck") {
-      display.value = "";
-      display.value = " A = a * b";
+      display.value = "A = a * b";
     } else if (element.textContent === "Kreis") {
-      display.value = "";
-      display.value = " A = PI * r";
+      display.value = "A = PI * r²"; // Formel für Kreisfläche ergänzt (r²)
     }
   });
 });
