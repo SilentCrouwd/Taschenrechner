@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Taschenrechner</title>
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
-
+  <!-- ############## MainBereich ##############-->
   <body>
     <div id="taschenrechner" class="taschenrechner">
       <input type="text" id="display" />
+      <!-- ---------- Buttons Nummern  ------------->
+
       <div class="num-grid">
         <button class="num-btn" id="one">1</button>
         <button class="num-btn" id="two">2</button>
@@ -25,6 +27,8 @@
 
         <button class="num-btn" id="equal">=</button>
       </div>
+      <!-- ---------- Buttons Operatoren  ------------->
+
       <div class="zeichen-grid">
         <button class="num-btn btn-plus">+</button>
         <button class="num-btn btn-minus">-</button>
@@ -34,6 +38,8 @@
       <button class="num-btn prozent" id="prozent">%</button>
       <button class="num-btn clear" id="clear" value="C">C</button>
 
+      <!-- ---------- Buttons Theme  ------------->
+
       <div class="theme-grid">
         <button class="btnBackground" id="backgoundOne">Theme1</button>
         <button class="btnBackground" id="backgounTwo">Theme2</button>
@@ -41,11 +47,12 @@
         <button class="btnBackground" id="backgoundThree">Theme4</button>
         <button class="btnBackground" id="backgoundThree">Default</button>
       </div>
+     <!-- ---------- Formeln Nummern  ------------->
+
       <div class="formel-grid">
         <button class="formel-btn">Quadrat</button>
         <button class="formel-btn">Rechteck</button>
         <button class="formel-btn">Kreis</button>
-    
       </div>
     </div>
     <script src="script.js"></script>
