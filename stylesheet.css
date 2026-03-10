@@ -132,13 +132,9 @@ justify-content: center;
   grid-row: 8;
       grid-column: 1/5;
 }
-.wert-formel2{
+
+.pi{
   cursor: pointer;
-  opacity: 0;
-  grid-area: 6/3;
-}
-.wert-formel1{
-  cursor: pointer;
-  opacity: 0;
+
   grid-area: 6/2;
 }

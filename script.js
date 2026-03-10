@@ -28,6 +28,17 @@ numbtn.forEach((element, index) => {
       display.value = eval(display.value); // Erst Ergebnis berechnen
       display.value = display.value / 100; // Dann durch 100 teilen
     } 
+    
+    // PI
+   
+    else if(element.textContent==="PI"){
+      const pi=Math.PI;
+    display.value = display.value + pi;
+
+
+    }
+     
+    
     // Operatoren (+, -, *, /) oder Dezimalpunkt
     else {
       appendToDislay(element.textContent);
