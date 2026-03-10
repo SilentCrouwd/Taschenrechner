@@ -1,7 +1,7 @@
 // --- DOM-Elemente selektieren ---
 const numbtn = document.querySelectorAll(".num-btn"); // Alle Ziffern- und Operationstasten
 const display = document.getElementById("display");    // Das Haupt-Eingabefeld/Display
-
+const maxLenght=15;
 
 // --- Event-Listener für die Taschenrechner-Tasten ---
 numbtn.forEach((element, index) => {
@@ -21,7 +21,8 @@ numbtn.forEach((element, index) => {
     // Berechnung ausführen
     else if (element.textContent === "=") {
       // eval() berechnet den String im Display (Vorsicht bei komplexen Apps!)
-      display.value = eval(display.value);
+  const ergebniss= eval(display.value);
+    display.value=ergebniss.toPrecision(7)
     } 
     // Prozentrechnung
     else if (element.textContent === "%") {
@@ -32,7 +33,7 @@ numbtn.forEach((element, index) => {
     // PI
    
     else if(element.textContent==="PI"){
-      const pi=Math.PI;
+      const pi=Math.PI.toFixed(4);
     display.value = display.value + pi;
 
 
@@ -48,7 +49,14 @@ numbtn.forEach((element, index) => {
 
 // Funktion zum Hinzufügen von Zeichen zum Display
 function appendToDislay(e) {
+if(display.value.length<maxLenght){
   display.value = display.value + e;
+  }
+  else{
+    display.value='ERROR to Long'
+  }  
+  
+  
 }
 
 // --- Theme / Design Wechsel Logik ---
